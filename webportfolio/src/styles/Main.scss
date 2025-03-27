@@ -1,0 +1,155 @@
+.main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/Background_Image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .inner {
+        position: relative;
+        max-width: 1530px;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+
+        .title_container {
+            position: relative;
+            text-align: center;
+            padding-top: 170px;
+
+            .title,
+            .title-reflection {
+                font-size: 138px;
+                font-weight: 700;
+                text-transform: uppercase;
+                line-height: 0.8;
+                font-family: "Unbounded", sans-serif;
+                letter-spacing: 7px;
+            }
+
+            .title {
+                color: #1A1C1F;
+                position: relative;
+                z-index: 1;
+            }
+
+            .title-reflection {
+                color: #fff;
+                text-shadow:
+                    -1px -1px 0 #1A1C1F,
+                    1px -1px 0 #1A1C1F,
+                    -1px 1px 0 #1A1C1F,
+                    1px 1px 0 #1A1C1F;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                transform: scaleY(1);
+                opacity: 0;
+                mask-image: linear-gradient(to bottom, #1A1C1F80, rgba(0, 0, 0, 0));
+                -webkit-mask-image: linear-gradient(to bottom, #1A1C1F80, rgba(0, 0, 0, 0));
+                transition: top 1.2s ease, opacity 1.2s ease, transform 1.2s ease;
+            }
+
+            &.active .title-reflection {
+                top: 100%;
+                transform: scaleY(-1);
+                opacity: 0.8;
+            }
+        }
+
+        .profile_img_box {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 560px;
+            z-index: 2;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .text_wrap {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            z-index: 1;
+            font-family: "Noto Sans KR", sans-serif;
+            color: #2B2D3070;
+            font-size: 16px;
+            margin-top: 180px;
+            line-height: 28px;
+
+            .left_area {
+
+                p {
+                    width: 450px;
+                    word-break: keep-all;
+                    font-weight: 500;
+                }
+
+                .link_wrap {
+                    display: flex;
+                    gap: 15px;
+                    margin-top: 20px;
+
+                    li a {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 40px;
+                        height: 40px;
+                        border: 1px solid #2B2D3070;
+                        border-radius: 10px;
+                        transition: all 0.4s ease;
+                        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+                        transform: translateY(0);
+
+                        svg {
+                            color: #2B2D3070;
+                        }
+
+                        &:hover {
+                            background-color: #FF6B00;
+                            border-color: #FF6B00;
+                            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                            transform: translateY(-4px);
+
+                            svg {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .right_area {
+                display: flex;
+                justify-content: flex-end;
+
+                p {
+                    width: 450px;
+                    font-weight: 500;
+                    text-align: right;
+                    word-break: keep-all;
+                }
+            }
+        }
+
+        .side_bg {
+            background-image: url(../assets/side_bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 440px;
+            height: 380px;
+            z-index: 0;
+        }
+    }
+}

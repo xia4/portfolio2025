@@ -1,0 +1,193 @@
+.about {
+    position: relative;
+    background: #f1f1f1;
+
+    .inner {
+        max-width: 1290px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 120px 0;
+
+        .title {
+            position: relative;
+            display: inline-block;
+            font-size: 48px;
+            font-weight: bold;
+            font-family: "Unbounded", sans-serif;
+            color: #1A1C1F;
+
+            &.underline {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                    height: 1px;
+                    width: 118px;
+                    background-color: #1A1C1F;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: -15px; // 선보다 살짝 아래
+                    left: 118px; // 선 길이와 맞춤
+                    width: 10px;
+                    height: 10px;
+                    background-color: #1A1C1F;
+                    border-radius: 50%;
+                }
+            }
+
+        }
+
+        .profile_container {
+            padding-top: 60px;
+
+            .profile_list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
+
+                .profile_item {
+                    background-color: #fff;
+                    border-radius: 15px;
+
+                    &:nth-child(1) {
+                        flex: 1 1 100%;
+                    }
+
+                    &:nth-child(2) {
+                        flex: 1 1 45%;
+                    }
+
+                    &:nth-child(3) {
+                        flex: 1 1 45%;
+                    }
+
+                    &:nth-child(4) {
+                        flex: 1 1 100%;
+                    }
+
+                    .profile_wrap {
+                        padding: 40px;
+
+                        &:has(.profile) {
+                            display: flex;
+                            align-items: flex-start;
+                            gap: 30px;
+                        }
+
+                        .img_box {
+                            flex: 1;
+
+                            .img {
+                                width: 400px;
+                                height: 400px;
+                                background-color: #1A1C1F;
+                            }
+                        }
+
+                        .profile {
+                            display: flex;
+                            flex: 1;
+
+                            li {
+                                flex: 1;
+                                font-size: 20px;
+
+                                strong {
+                                    color: #1A1C1F;
+                                    font-family: "Unbounded", sans-serif;
+                                }
+
+                                p {
+                                    margin-top: 16px;
+                                    font-family: "DM Sans", sans-serif;
+                                    font-size: 16px;
+                                    color: rgba(43, 45, 48, 0.7);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .left_bg {
+        background-image: url(../assets/left_bg.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 180px;
+        left: 0;
+        width: 428px;
+        height: 740px;
+    }
+}
+
+
+.skill_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+
+    .barWrapper {
+        margin-bottom: 20px;
+
+        .progressText {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        .progress {
+            height: 25px;
+            background: #e0e0e0;
+            border-radius: 30px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+
+            .progress-bar {
+                background: rgb(23, 44, 60);
+                height: 100%;
+                width: 0;
+                transition: width 1.5s ease-in-out;
+                border-radius: 30px;
+                background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+
+                .popOver {
+                    position: relative;
+                    float: right;
+                    margin-right: 5px;
+
+                    &::after {
+                        content: attr(title);
+                        position: absolute;
+                        top: -30px;
+                        transform: translateX(-40%);
+                        left: 50%;
+                        width: 50px;
+                        text-align: center;
+                        background-color: #eebf3f;
+                        color: rgb(23, 44, 66);
+                        padding: 5px 0;
+                        font-size: 13px;
+                        font-weight: bold;
+                        white-space: nowrap;
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: -8px;
+                        left: 0;
+                        border-left: 5px solid transparent;
+                        border-right: 5px solid transparent;
+                        border-top: 5px solid #eebf3f;
+                    }
+                }
+            }
+        }
+    }
+}
