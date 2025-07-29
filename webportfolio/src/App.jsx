@@ -7,12 +7,18 @@ import './styles/reset.scss'
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
-      <Main />
-      <About/>
-      <Footer />
-    </div>
+      <div className="site_main">
+        <div className="pt-wrapper">
+          <div className="subpages">
+            <Main />
+            <About/>
+            <Footer />
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
