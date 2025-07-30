@@ -1,13 +1,29 @@
 import React, { useState } from 'react';
 import '../styles/Header.scss';
 
-const Header = () => {
-
+const Header = ({ setActiveSection, activeSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const handleMenuClick = (menuId) => {
+    setActiveSection(menuId);
+    const section = document.getElementById(menuId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
+  const menuItems = [
+    { id: 'home', label: 'Home', icon: 'ri-home-3-line' },
+    { id: 'about', label: 'About Me', icon: 'ri-user-line' },
+    { id: 'resume', label: 'Resume', icon: 'ri-id-card-line' },
+    { id: 'portfolio', label: 'Portfolio', icon: 'ri-briefcase-line' },
+    { id: 'contact', label: 'Contact', icon: 'ri-mail-line' },
+  ];
 
   return (
     <>
@@ -18,24 +34,21 @@ const Header = () => {
             <img src={require('../assets/proflie_img.png')} alt="profile" />
           </div>
           <div className="name_box">
-            <h1 className="name">Alex Smith</h1>
+            <h1 className="name">Lee Hyeon Jun</h1>
           </div>
           <ul className="nav_menu">
-            <li className="active">
-              <a href="#home"><i class="menu_icon ri-home-3-line"></i>Home</a>
-            </li>
-            <li>
-              <a href="#about me"><i class="menu_icon ri-user-line"></i>About Me</a>
-            </li>
-            <li>
-              <a href="#resume"><i class="menu_icon ri-id-card-line"></i>Resume</a>
-            </li>
-            <li>
-              <a href="#portfolio"><i class="menu_icon ri-briefcase-line"></i>Portfolio</a>
-            </li>
-            <li>
-              <a href="#contact"><i class="menu_icon ri-mail-line"></i>Contact</a>
-            </li>
+            {menuItems.map((item) => (
+              <li
+                key={item.id}
+                className={activeSection === item.id ? 'active' : ''}
+                onClick={() => handleMenuClick(item.id)}
+              >
+                <a>
+                  <i className={`menu_icon ${item.icon}`}></i>
+                  {item.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </header>
@@ -43,10 +56,10 @@ const Header = () => {
       {/* Mobile Header */}
       <header className="mobile_header mobile_visible">
         <div className="mobile_name">
-          <h1 className="name">Alex Smith</h1>
+          <h1 className="name">Lee Hyeon Jun</h1>
         </div>
         <a className='menu_toggle mobile_visible' onClick={handleToggleMenu}>
-          <i class="ri-bar-chart-horizontal-line"></i>
+          <i className="ri-bar-chart-horizontal-line"></i>
         </a>
       </header>
     </>

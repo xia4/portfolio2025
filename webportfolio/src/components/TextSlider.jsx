@@ -1,31 +1,32 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/autoplay";
-import 'swiper/css/effect-fade';
-import "../styles/TextSlider.scss"
+import React, { useEffect, useState } from "react";
+import "../styles/TextSlider.scss";
+
+const texts = ["Web Publisher", "Frontend-developer"];
 
 const TextRotation = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % texts.length);
+    }, 2500);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <Swiper
-      loop={true}
-      centeredSlides={true}
-      effect={'fade'}
-      autoplay={{
-        delay: 2500,
-        disableOnInteraction: false,
-      }}
-      modules={[ Autoplay, EffectFade]}
-      className="mySwiper"
-    >
-      <SwiperSlide>
-        <p className="home-page-description">Web Designer</p>
-      </SwiperSlide>
-      <SwiperSlide>
-        <p className="home-page-description2">Frontend-developer</p>
-      </SwiperSlide>
-    </Swiper>
+    <div className="text-slider">
+      {texts.map((text, i) => (
+        <p
+          key={i}
+          className={`home_page_description ${
+            i === index ? "visible" : "hidden"
+          }`}
+        >
+          {text}
+        </p>
+      ))}
+    </div>
   );
 };
 

@@ -1,6 +1,27 @@
-.home-page-description {
-  background-color: red;
+.text-slider {
+  position: relative;
+  height: 24px;
+  overflow: hidden;
 }
-.home-page-description2 {
-  background-color: blue;
+
+.home_page_description {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 21px;
+  color: #222;
+  font-weight: 400;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.home_page_description.visible {
+  opacity: 1;
+  z-index: 1;
+}
+
+.home_page_description.hidden {
+  opacity: 0;
+  z-index: 0;
 }
