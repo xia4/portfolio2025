@@ -19,7 +19,6 @@ const App = () => {
     portfolio: 'slide-from-bottom',
     contact: 'slide-from-top',
   };
-  
 
   const handleSetActiveSection = (section) => {
     if (section !== active) {
@@ -46,6 +45,14 @@ const App = () => {
     if (isPrev) className += ' pt-page-exit';
     if (isActive) className += ` pt-page-current ${sectionEnterMap[id]}`;
 
+    if (id === 'resume') {
+      return (
+        <section key={id} id={id} className={className}>
+          <Resume activeSection={active} />
+        </section>
+      );
+    }
+
     return (
       <section key={id} id={id} className={className}>
         <Component />
@@ -55,17 +62,17 @@ const App = () => {
 
   return (
     <>
-      <Header 
-  setActiveSection={handleSetActiveSection} 
-  activeSection={active}
-/>
+      <Header
+        setActiveSection={handleSetActiveSection}
+        activeSection={active}
+      />
 
       <div className="site_main">
         <div className="pt-wrapper">
           <div className="subpages">
             {renderSection('home', Home, true)}
             {renderSection('about', About)}
-            {renderSection('resume', Resume)}
+            {renderSection('resume', () => <Resume activeSection={active} />)}
             {renderSection('portfolio', Portfolio)}
             {renderSection('contact', Contact)}
 

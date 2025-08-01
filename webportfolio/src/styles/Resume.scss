@@ -1,0 +1,103 @@
+.block_title h3 {
+    display: inline-block;
+    position: relative;
+    margin: 0 0 20px;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        left: -10px;
+        bottom: 0;
+        background-color: #ff724c;
+    }
+}
+
+.timeline {
+    position: relative;
+    border-left: 1px solid #f5f5f5;
+    padding-bottom: 10px;
+
+    .timeline_event {
+        position: relative;
+        padding-left: 20px;
+        padding-bottom: 20px;
+
+        .event_date {
+            display: inline-block;
+            position: relative;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.1em;
+            margin: 0 0 3px;
+            background-color: #ff724c;
+            padding: 5px 8px 5px 20px;
+            margin-left: -20px;
+        }
+
+        .event_name {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .event_description {
+            margin: 0 0 4px;
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 1.45em;
+            color: #7c7c7c;
+        }
+
+        .event_text {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+    }
+}
+
+.skills_box {
+    width: 100%;
+
+    .skills_list {
+        .skill_item {
+            margin-bottom: 20px;
+
+            .skill_label {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 6px;
+                font-size: 14px;
+                font-weight: 600;
+                color: #333;
+
+                .skill_level {
+                    margin-left: 8px;
+                    color: #ff724c;
+                }
+            }
+
+            .skill_bar_bg {
+                width: 100%;
+                height: 12px;
+                overflow: hidden;
+                background: #ececec;
+                border-radius: 8px;
+
+                .skill_bar {
+                    height: 100%;
+                    background: linear-gradient(90deg, #ffaf99 0%, #ff724c 100%);
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+

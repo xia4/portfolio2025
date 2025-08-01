@@ -4,8 +4,11 @@ const Home = () => {
     return (
 
         <div className="section_inner">
-            <div className="home_page_block">
-                <h2>Lee Hyeon Jun</h2>
+            <div className="section_title_block">
+                <div className="section_title_wrapper">
+                    <h2 className="section_title">Portfolio</h2>
+                    <p className="section_description">My Best Works</p>
+                </div>
             </div>
         </div>
 

@@ -1,8 +1,6 @@
-.section_inner {
+#home .section_inner {
     display: table-cell;
     vertical-align: middle;
-    position: relative;
-    padding: 20px 60px 50px;
 
     .home_page_block {
       position: relative;
@@ -11,9 +9,11 @@
       > h2 {
         text-align: center;
         font-size: 70px;
-        font-weight: 700;
         color: #ff724c;
-        line-height: 1.5;
       }
+    }
+
+    &::after, &::before {
+      display: none;
     }
   }

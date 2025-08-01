@@ -82,8 +82,6 @@ video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
     box-sizing: border-box;
 }
@@ -104,11 +102,16 @@ section {
 }
 html {
     height: 100%;
+    min-height: 100%;
+    overflow: hidden;
 }
 body {
     line-height: 1.5em;
     font-size: 16px;
     height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    font-family: 'Oxygen', 'Noto Sans KR', sans-serif;
 }
 
 ol,
@@ -135,9 +138,16 @@ a {
 img {
     max-width: 100%;
     width: 100%;
-    height: auto;
+    height: 100%;
+    vertical-align: bottom;
 }
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Oxygen", sans-serif;
+    color: #222;
+    font-weight: bold;
+    line-height: 1.5em;
 }

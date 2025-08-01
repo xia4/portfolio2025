@@ -9,13 +9,13 @@ const Header = ({ setActiveSection, activeSection }) => {
   };
 
   const handleMenuClick = (menuId) => {
-    setActiveSection(menuId);
-    const section = document.getElementById(menuId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+    if (activeSection !== menuId) {
+      setActiveSection(menuId);
+      
     }
     setIsMenuOpen(false);
   };
+  
 
   const menuItems = [
     { id: 'home', label: 'Home', icon: 'ri-home-3-line' },
@@ -43,10 +43,10 @@ const Header = ({ setActiveSection, activeSection }) => {
                 className={activeSection === item.id ? 'active' : ''}
                 onClick={() => handleMenuClick(item.id)}
               >
-                <a>
+                <p>
                   <i className={`menu_icon ${item.icon}`}></i>
                   {item.label}
-                </a>
+                </p>
               </li>
             ))}
           </ul>
