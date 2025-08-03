@@ -66,7 +66,7 @@
       line-height: 1.1em;
       z-index: 1;
     }
-  
+
     .section_description {
       display: inline-block;
       position: relative;
@@ -115,6 +115,19 @@
     right: 20px;
     bottom: 10px;
     z-index: 0;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ff724c;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #ffdcd3
   }
 }
 

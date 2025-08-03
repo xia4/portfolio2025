@@ -51,9 +51,10 @@
             color: #7c7c7c;
         }
 
-        .event_text {
+        .event_text li {
             margin-bottom: 10px;
-            font-size: 14px;
+            font-size: 12px;
+            word-break: keep-all;
             color: #555;
         }
     }
