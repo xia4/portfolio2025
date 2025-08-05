@@ -4,14 +4,15 @@ import '../styles/Resume.scss';
 // 스킬 배열
 const skills = [
     { name: 'HTML5', level: 85 },
-    { name: 'CSS3', level: 75 },
-    { name: 'BOOTSTRAP', level: 65 },
-    { name: 'JQUERY', level: 55 },
-    { name: 'MYSQL', level: 70 },
-    { name: 'PHP', level: 75 },
+    { name: 'CSS3', level: 80 },
+    { name: 'JavaScript', level: 70 },
+    { name: 'React.js', level: 55 },
+    { name: 'SASS', level: 80 },
+    { name: 'Git', level: 70 },
+    { name: 'Figma', level: 55 },
 ];
 
-const ANIMATION_DURATION = 2500;
+const ANIMATION_DURATION = 2000;
 
 const Resume = ({ activeSection }) => {
     const initialLevels = skills.map(() => 0); // 중복 제거용 상수

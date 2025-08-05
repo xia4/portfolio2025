@@ -1,91 +1,319 @@
 .filter_section {
-    .portfolio_filter {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
+  .portfolio_filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 
-        li {
-            a {
-                padding: 5px 10px;
-                font-size: 12px;
-                color: #888;
-                transition: all 0.3s ease-in-out;
+    li {
+      a {
+        padding: 5px 10px;
+        font-size: 12px;
+        color: #888;
+        transition: all 0.3s ease-in-out;
 
-                &:hover {
-                    background-color: #eee;
-                }
-            }
-
-            &.active {
-                a {
-                    background-color: #ff724c;
-                    color: #fff;
-                }
-            }
+        &:hover {
+          background-color: #eee;
         }
+      }
+
+      &.active {
+        a {
+          background-color: #ff724c;
+          color: #fff;
+        }
+      }
     }
+  }
 }
 
 .portfolio_grid {
-    margin-top: 20px;
+  margin-top: 20px;
 
-    ul {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 3px;
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
 
-        li {
-            position: relative;
-            list-style: none;
-            opacity: 1;
-            transform: scale(1);
-            transition: opacity 0.3s ease, transform 0.3s ease;
+    li {
+      position: relative;
+      list-style: none;
+      opacity: 1;
+      transform: scale(1);
+      transition: opacity 0.3s ease, transform 0.3s ease;
 
-            &.fade-in {
-                opacity: 1;
-                transform: scale(1);
-            }
+      &.fade-in {
+        opacity: 1;
+        transform: scale(1);
+      }
 
-            &.fade-out {
-                opacity: 0;
-                transform: scale(0.9);
-            }
+      &.fade-out {
+        opacity: 0;
+        transform: scale(0.9);
+      }
 
-            a {
-                position: relative;
-                display: block;
-                overflow: hidden;
-                transition: all 0.3s ease-in-out;
+      a {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
 
-                .detail {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    padding: 5px 20px;
-                    background-color: rgba(238, 238, 238, 0.95);
-                    opacity: 0;
-                    transform: translateY(-10px);
-                    pointer-events: none;
-                    transition: all 0.3s ease-in-out;
-
-                    .title {
-                        font-size: 16px;
-                        font-weight: bold;
-                    }
-                }
-
-                &:hover {
-                    .detail {
-                        opacity: .6;
-                        transform: translateY(0);
-                        pointer-events: auto;
-                    }
-                }
-            }
+        img {
+          display: block;
+          transition: all 0.3s ease-in-out 0.1s;
         }
+
+        .detail {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          padding: 10px 20px;
+          background-color: rgba(238, 238, 238, 0);
+          opacity: 0;
+          transform: translateY(-10px);
+          pointer-events: none;
+          transition: all 0.3s ease-in-out;
+
+          .title {
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+        &:hover {
+          img {
+            transform: scale(1.15);
+          }
+          .detail {
+            background-color: rgba(238, 238, 238, 0.7);
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+          }
+        }
+      }
     }
+  }
 }
 
+/* 포트폴리오 상세 모달 */
+.portfolio_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+
+  &.show {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+
+  .modal_content {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: fadeIn 0.3s ease;
+
+    /* 닫기 버튼 */
+    .close_btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #888;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #ff724c;
+      }
+    }
+
+    /* 상단 네비게이션 버튼 */
+    .nav_btns {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      pointer-events: none;
+
+      button {
+        background: none;
+        border: none;
+        font-size: 36px;
+        color: #333;
+        cursor: pointer;
+        pointer-events: auto;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #ff724c;
+        }
+      }
+    }
+
+    /* 컨텐츠 영역 */
+    .modal_body {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .modal_title {
+        width: 100%;
+        padding-top: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+
+        h1 {
+          display: inline-block;
+          font-size: 32px;
+        }
+      }
+
+      /* 좌측 이미지 영역 */
+      .image_area {
+        position: relative;
+        width: 60%;
+        padding: 20px;
+
+        .monitor {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 636px;
+          z-index: 5;
+          background-image: url(../assets/monitor.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+
+        .slide {
+          position: absolute;
+          top: 17px;
+          left: 14px;
+          z-index: 6;
+          overflow: hidden;
+          width: calc(100% - 30px);
+          height: 412px;
+          border: 2px solid #333;
+          border-radius: 8px;
+
+          li {
+            width: 100%;
+            height: 410px;
+            overflow-y: scroll;
+            filter: saturate(80%) contrast(90%);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+
+            img {
+              height: auto;
+            }
+          }
+        }
+      }
+
+      /* 우측 설명 영역 */
+      .info_area {
+        width: 35%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .info_block {
+          ul {
+            list-style-type: circle;
+          }
+          .info_value {
+            font-size: 14px;
+            color: #555;
+            white-space: pre-line;
+          }
+
+          li.info_value {
+            &:not(:first-child) {
+              margin-top: 10px;
+            }
+          }
+
+          .skill_list {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            list-style: none;
+
+            li {
+              font-size: 12px;
+              background-color: #f5f5f5;
+              padding: 4px 8px;
+              border-radius: 4px;
+            }
+          }
+        }
+
+        .site_btn {
+          margin-top: auto;
+
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            font-weight: bold;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+            transition: all 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 페이드인 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .portfolio_modal {
+    .modal_content {
+      padding: 20px;
+
+      .modal_body {
+        flex-direction: column;
+      }
+    }
+  }
+}
