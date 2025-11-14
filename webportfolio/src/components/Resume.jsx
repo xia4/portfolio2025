@@ -6,6 +6,7 @@ const skills = [
     { name: 'HTML5', level: 85 },
     { name: 'CSS3', level: 80 },
     { name: 'JavaScript', level: 70 },
+    { name: 'jQuery', level: 60 },
     { name: 'React.js', level: 55 },
     { name: 'SASS', level: 80 },
     { name: 'Git', level: 70 },
@@ -63,22 +64,22 @@ const Resume = ({ activeSection }) => {
                 {/* Education */}
                 <div className="row_item">
                     <div className="block_title"><h3>Education</h3></div>
-                    <div className="timeline">
-                        <div className="timeline_event">
-                            <h4 className="event_date">2021</h4>
-                            <h3 className="event_name">위코드</h3>
-                            <p className="event_description">bootcamp Student</p>
-                            <ol className="event_text">
+                    <div className="timeline_list">
+                        <div className="timeline_item">
+                            <h4 className="timeline_period">2021</h4>
+                            <h3 className="timeline_name">위코드</h3>
+                            <p className="timeline_role">bootcamp Student</p>
+                            <ol className="timeline_detail">
                                 <li>HTML, CSS, JavaScript 기본기와 DOM 조작, React 컴포넌트 구조,</li>
                                 <li>API 연동, Styled-Components를 활용한 스타일링, Git/GitHub 협업,</li>
                                 <li>팀 프로젝트를 통한 실무형 웹 서비스 구현 경험</li>
                             </ol>
                         </div>
-                        <div className="timeline_event">
-                            <h4 className="event_date">2021</h4>
-                            <h3 className="event_name">전주비전대학교</h3>
-                            <p className="event_description">University Student</p>
-                            <ol className="event_text">
+                        <div className="timeline_item">
+                            <h4 className="timeline_period">2021</h4>
+                            <h3 className="timeline_name">전주비전대학교</h3>
+                            <p className="timeline_role">University Student</p>
+                            <ol className="timeline_detail">
                                 <li>건축과 재학 중 도면 작업 및 구조 설계 경험을 통해 공간 구성과 시각적 레이아웃에 대한 감각을 키웠으며,
                                 이후 웹 퍼블리싱 분야에 흥미를 느껴 커리어 전환을 결심함</li>
                             </ol>
@@ -89,34 +90,46 @@ const Resume = ({ activeSection }) => {
                 {/* Experience */}
                 <div className="row_item">
                     <div className="block_title"><h3>Experience</h3></div>
-                    <div className="timeline">
-                        <div className="timeline_event">
-                            <h4 className="event_date">Jun 2023 - Apr 2025</h4>
-                            <h3 className="event_name">(주)서로커뮤니케이션</h3>
-                            <p className="event_description">Web Publisher</p>
-                            <ol className="event_text">
+                    <div className="timeline_list">
+                        <div className="timeline_item">
+                            <h4 className="timeline_period">Apr 2025 - Nov 2025</h4>
+                            <h3 className="timeline_name">TokenPost</h3>
+                            <p className="timeline_role">Web Publisher</p>
+                            <ol className="timeline_detail">
+                                <li>TokenPost PRO 구독 서비스 페이지 제작 및 UI 고도화</li>
+                                <li>웹사이트 신규 페이지 및 이벤트/프로모션 페이지 구축</li>
+                                <li>자사 웹사이트(마이페이지·헤더·프로모션 등) 유지보수 및 UI/UX 개선</li>
+                                <li>Phalcon Volt 기반 페이지 퍼블리싱 및 jQuery 모듈로 동적 기능 개발</li>
+                                <li>기획자·디자이너·백엔드 개발자와 협업하여 요구사항 분석 및 UI 개선</li>
+                            </ol>
+                        </div>
+                        <div className="timeline_item">
+                            <h4 className="timeline_period">Jun 2023 - Apr 2025</h4>
+                            <h3 className="timeline_name">(주)서로커뮤니케이션</h3>
+                            <p className="timeline_role">Web Publisher</p>
+                            <ol className="timeline_detail">
                                 <li>다양한 기업 및 클라이언트의 웹사이트 제작 및 유지보수</li>
                                 <li>웹사이트 신규 페이지 및 이벤트/프로모션 페이지 구축</li>
                                 <li>웹사이트 성능 개선 및 최적화 작업</li>
                                 <li>기획자·디자이너와의 협업 및 요구사항 분석을 통한 UI/UX 개선</li>
                             </ol>
                         </div>
-                        <div className="timeline_event">
-                            <h4 className="event_date">Nov 2021 - Dec 2022</h4>
-                            <h3 className="event_name">(주)이유엠</h3>
-                            <p className="event_description">Web Publisher</p>
-                            <ol className="event_text">
+                        <div className="timeline_item">
+                            <h4 className="timeline_period">Nov 2021 - Dec 2022</h4>
+                            <h3 className="timeline_name">(주)이유엠</h3>
+                            <p className="timeline_role">Web Publisher</p>
+                            <ol className="timeline_detail">
                                 <li>Figma를 활용한 UI/UX 설계 및 프로토타입 제작</li>
                                 <li>자사 웹사이트 메인 및 서브 페이지 리뉴얼 및 최적화</li>
                                 <li>스마트스토어 및 오픈마켓 플랫폼 관리 및 운영</li>
                                 <li>상품 등록, 디자인 및 프로모션 페이지 퍼블리싱</li>
                             </ol>
                         </div>
-                        <div className="timeline_event">
-                            <h4 className="event_date">Sep 2021 - Oct 2021</h4>
-                            <h3 className="event_name">제누이오</h3>
-                            <p className="event_description">Front-end</p>
-                            <ol className="event_text">
+                        <div className="timeline_item">
+                            <h4 className="timeline_period">Sep 2021 - Oct 2021</h4>
+                            <h3 className="timeline_name">제누이오</h3>
+                            <p className="timeline_role">Front-end</p>
+                            <ol className="timeline_detail">
                                 <li>제품관리/발주 어드민, MyPage, Cart, 메인화면 등 개발</li>
                                 <li>JWT 기반 로그인 기능 구현 및 토큰 관리로 사용자 인증 보안 강화</li>
                                 <li>페이지네이션을 적용한 제품 목록 페이지 구성</li>

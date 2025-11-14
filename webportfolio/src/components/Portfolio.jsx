@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import tokenpostImg from "../assets/tokenpost.jpg";
+import tokenpostMainImg from "../assets/tokenpost_main.png";
 import tedoImg from "../assets/tedo.png";
 import tedoSlideImg from "../assets/tedo_slide.png";
 import kiccImg from "../assets/kicc.png";
+import ikmrMainImg from "../assets/ikmr_main.png";
 import naverImg from "../assets/naver.png";
 import ikmrImg from "../assets/ikmr.png";
 import reznImg from "../assets/rezn.png";
@@ -13,6 +16,28 @@ import "../styles/Portfolio.scss";
 const portfolioData = [
   {
     id: 1,
+    title: "TokenPost",
+    image: tokenpostImg,
+    link: "https://www.tokenpost.kr",
+    project_desc: [
+      "블록체인, 핀테크 전문 미디어 TokenPost PRO 구독 서비스 및 이벤트 랜딩페이지를 구축하고, 웹사이트의 주요 구독, 이벤트 페이지 전반에 대한 퍼블리싱 및 유지보수를 담당",
+      "웹 접근성, 반응형, 사용자 경험(UX)을 고려한 인터랙티브 UI를 구현하여 브랜드 신뢰도와 전환율 향상에 기여했습니다.",
+    ],
+    date: "2025. 08 ~ 2025. 11",
+    level: "100%",
+    description: "",
+    slide_image: tokenpostMainImg,
+    desc_list: [
+      "TokenPost 홈페이지 및 주요 서비스 페이지 유지보수·콘텐츠 업데이트·디자인 개편 수행",
+      "TokenPost PRO 구독, 구독·친구초대 landing 이벤트 등 신규 구독/이벤트 페이지 퍼블리싱",
+      "GSAP, Swiper 를 활용한 스크롤 애니메이션,슬라이드 UI 구현",
+      "Git 브랜치 전략(dev, header_v2, stage 브랜치 등) 기반 공동 작업 및 버전(Revision) 관리",
+      "적응형 레이아웃 설계 및 크로스브라우징 대응",
+    ],
+    technology: ["HTML5", "CSS3", "JavaScript", "jQuery", "Git", "Figma"],
+  },
+  {
+    id: 2,
     title: "Naver Cloud Platform",
     image: naverImg,
     link: "",
@@ -31,79 +56,84 @@ const portfolioData = [
     technology: ["HTML5", "SCSS", "JavaScript", "Git", "Figma"],
   },
   {
-    id: 2,
+    id: 3,
     title: "KICC",
     image: kiccImg,
     link: "https://kicc.com",
-    project_desc:[],
+    project_desc: [],
     date: "2024-06-10",
+    level: "45%",
+    slide_image: '',
     description: "결제 시스템 퍼블리싱 및 반응형 최적화.",
     technology: ["HTML5", "SCSS", "jQuery"],
   },
   {
-    id: 3,
+    id: 4,
     title: "tedo",
     image: tedoImg,
     slide_image: tedoSlideImg,
     link: "https://tedo.kr/",
-    project_desc:["클라이언트와 기획 단계부터 협업하여 프로젝트의 방향성을 설정하고, 반응형 UI 및 섹션별 인터랙션을 제안해 산출물의 완성도를 높였습니다."],
+    project_desc: [
+      "클라이언트와 기획 단계부터 협업하여 프로젝트의 방향성을 설정하고, 반응형 UI 및 섹션별 인터랙션을 제안해 산출물의 완성도를 높였습니다.",
+    ],
     date: "2024-05-21",
     level: "70%",
     description: "",
     desc_list: [
-        "HTML, CSS, JavaScript를 활용한 UI 개발",
-        "반응형 디자인을 고려한 레이아웃 설계 및 스타일링",
-        "섹션별 인터랙션 기획 및 구현",
-        "내부 퍼블리셔와 협업하여 효율적인 개발 프로세스 진행"
+      "HTML, CSS, JavaScript를 활용한 UI 개발",
+      "반응형 디자인을 고려한 레이아웃 설계 및 스타일링",
+      "섹션별 인터랙션 기획 및 구현",
+      "내부 퍼블리셔와 협업하여 효율적인 개발 프로세스 진행",
     ],
-    technology: ["HTML5", "CSS3","JavaScript", "PHP", "Figma"],
+    technology: ["HTML5", "CSS3", "JavaScript", "PHP", "Figma"],
   },
   {
-    id: 4,
+    id: 5,
     title: "한국경영인증원",
     image: ikmrImg,
     link: "#",
-    project_desc:[],
+    project_desc: [],
     date: "2024-05-01",
+    slide_image: ikmrMainImg,
     description: "기관 홈페이지 리뉴얼.",
     technology: ["HTML5", "CSS3", "JavaScript"],
   },
   {
-    id: 5,
+    id: 6,
     title: "리즌마켓",
     image: reznImg,
     link: "#",
-    project_desc:[],
+    project_desc: [],
     date: "2024-04-15",
     description: "이커머스 플랫폼 퍼블리싱.",
     technology: ["HTML5", "CSS3", "JavaScript"],
   },
   {
-    id: 6,
+    id: 7,
     title: "피플리",
     image: peoplyImg,
     link: "#",
-    project_desc:[],
+    project_desc: [],
     date: "2024-03-20",
     description: "소셜 플랫폼 UI 개발.",
     technology: ["HTML5", "CSS3", "React"],
   },
   {
-    id: 7,
+    id: 8,
     title: "네이쳐스영",
     image: natureImg,
     link: "#",
-    project_desc:[],
+    project_desc: [],
     date: "2024-02-10",
     description: "화장품 브랜드 사이트 제작.",
     technology: ["HTML5", "CSS3", "JavaScript"],
   },
   {
-    id: 8,
+    id: 9,
     title: "TSI",
     image: tsiImg,
     link: "#",
-    project_desc:[],
+    project_desc: [],
     date: "2024-01-05",
     description: "기업 홈페이지 제작.",
     technology: ["HTML5", "CSS3", "JavaScript"],
@@ -218,30 +248,27 @@ const Portfolio = () => {
       {currentPortfolio && (
         <div className={`portfolio_modal ${isModalVisible ? "show" : ""}`}>
           <div className="modal_content">
-            <div className="nav_btns">
-              <button onClick={handlePrev}>
-                <i className="ri-arrow-left-s-line"></i>
-              </button>
-              <button onClick={handleNext}>
-                <i className="ri-arrow-right-s-line"></i>
-              </button>
-            </div>
             <div className="close_btn" onClick={handleClose}>
               <i class="ri-close-line"></i>
             </div>
 
             <div className="modal_body">
               <div className="modal_title">
-                <h1>{currentPortfolio.title}</h1>
+                <div className="nav_btns">
+                  <button onClick={handlePrev}>
+                    <i className="ri-arrow-left-s-line"></i>
+                  </button>
+                  <h1>{currentPortfolio.title}</h1>
+                  <button onClick={handleNext}>
+                    <i className="ri-arrow-right-s-line"></i>
+                  </button>
+                </div>
               </div>
               <div className="image_area">
-                <div className="monitor"></div>
-                <div className="slide">
-                    <ul>
-                        <li>
-                            <img src={currentPortfolio.slide_image} alt="" />
-                        </li>
-                    </ul>
+                <div className="monitor">
+                  <div className="slide">
+                    <img src={currentPortfolio.slide_image} alt="" />
+                  </div>
                 </div>
               </div>
               <div className="info_area">
@@ -307,9 +334,7 @@ const Portfolio = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      페이지
-                      <br />
-                      이동
+                      Go Site
                     </a>
                   </div>
                 )}

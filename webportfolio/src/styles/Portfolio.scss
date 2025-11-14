@@ -147,13 +147,11 @@
 
     /* 상단 네비게이션 버튼 */
     .nav_btns {
-      position: absolute;
-      top: 50%;
-      left: 0;
+      max-width: 700px;
       width: 100%;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
-      transform: translateY(-50%);
       pointer-events: none;
 
       button {
@@ -176,11 +174,11 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
+      row-gap: 50px;
 
       .modal_title {
         width: 100%;
         padding-top: 10px;
-        margin-bottom: 20px;
         text-align: center;
 
         h1 {
@@ -193,40 +191,47 @@
       .image_area {
         position: relative;
         width: 60%;
-        padding: 20px;
 
         .monitor {
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
-          height: 636px;
+          height: 424px;
           z-index: 5;
-          background-image: url(../assets/monitor.png);
-          background-repeat: no-repeat;
+          background: url(../assets/notebook.png) center center no-repeat;
           background-size: contain;
         }
 
         .slide {
           position: absolute;
-          top: 17px;
-          left: 14px;
+          top: 30px;
+          left: 80px;
           z-index: 6;
           overflow: hidden;
-          width: calc(100% - 30px);
-          height: 412px;
-          border: 2px solid #333;
-          border-radius: 8px;
+          width: 520px;
+          height: 322px;
+          overflow-y: scroll;
+          border-radius: 6px;
 
-          li {
+          &::-webkit-scrollbar {
+            width: 5px;
+          }
+          &::-webkit-scrollbar-thumb {
+            background-color: #ff724c;
+          }
+          &::-webkit-scrollbar-track {
+            background-color: #fff;
+          }
+          img {
             width: 100%;
-            height: 410px;
-            overflow-y: scroll;
-            filter: saturate(80%) contrast(90%);
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            height: auto;
+            filter: saturate(90%) contrast(80%);
+            transition: all 0.4s cubic-bezier(.23, 1, .32, 1);
 
-            img {
-              height: auto;
+            &:hover {
+              transition: all 0.8s cubic-bezier(.23, 1, .32, 1);
+              filter: saturate(110%) contrast(100%);
             }
           }
         }
@@ -247,7 +252,7 @@
           .info_value {
             font-size: 14px;
             color: #555;
-            white-space: pre-line;
+            word-break: keep-all;
           }
 
           li.info_value {
@@ -275,17 +280,15 @@
           margin-top: auto;
 
           a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100px;
-            height: 100px;
+            display: inline-block;
+            padding: 8px 20px;
+            font-size: 14px;
             font-weight: bold;
             text-align: center;
             background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-            transition: all 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+            border-radius: 50px;
+            // box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+            border: 1px solid #555;
           }
         }
       }
