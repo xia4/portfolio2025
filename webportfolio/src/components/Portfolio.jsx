@@ -11,6 +11,7 @@ import reznImg from "../assets/rezn.png";
 import peoplyImg from "../assets/peoply.png";
 import natureImg from "../assets/nature.png";
 import tsiImg from "../assets/tsi.png";
+import notFoundImg from "../assets/not_found.png";
 import "../styles/Portfolio.scss";
 
 const portfolioData = [
@@ -35,6 +36,7 @@ const portfolioData = [
       "적응형 레이아웃 설계 및 크로스브라우징 대응",
     ],
     technology: ["HTML5", "CSS3", "JavaScript", "jQuery", "Git", "Figma"],
+    category: "TokenPost",
   },
   {
     id: 2,
@@ -54,18 +56,30 @@ const portfolioData = [
       "Git을 활용한 코드 리뷰 및 피드백",
     ],
     technology: ["HTML5", "SCSS", "JavaScript", "Git", "Figma"],
+    category: "Soro Communication",
   },
   {
     id: 3,
     title: "KICC",
     image: kiccImg,
-    link: "https://kicc.com",
-    project_desc: [],
-    date: "2024-06-10",
-    level: "45%",
-    slide_image: '',
-    description: "결제 시스템 퍼블리싱 및 반응형 최적화.",
-    technology: ["HTML5", "SCSS", "jQuery"],
+    link: "",
+    project_desc: [
+      "KICC 웹사이트의 전면 리뉴얼을 기획부터 개발까지 주도하여 진행.",
+      "UI/UX 개선과 성능 최적화를 목표로 Vue3 및 SASS를 활용한 컴포넌트 기반 개발 수행.",
+      "반응형 웹 디자인을 고려하여 최적화된 마크업을 제공하는 역할을 수행.",
+    ],
+    date: "2023. 01 ~ 2025. 03",
+    level: "50%",
+    slide_image: "",
+    desc_list: [
+      "UI 컴포넌트 개발 및 스타일 가이드 적용",
+      "아코디언(Accordion), 모달(Modal), 탭(Tab), 캘린더(Calendar) 등 인터랙티브 컴포넌트 구현",
+      "SASS 기반의 마크업 및 반응형 퍼블리싱",
+      "API 연동 작업 (Swagger 기반)",
+    ],
+    technology: ["Vue3", "SCSS", "Git", "PSD"],
+    category: "Soro Communication",
+    remarks: "ss",
   },
   {
     id: 4,
@@ -86,17 +100,19 @@ const portfolioData = [
       "내부 퍼블리셔와 협업하여 효율적인 개발 프로세스 진행",
     ],
     technology: ["HTML5", "CSS3", "JavaScript", "PHP", "Figma"],
+    category: "Soro Communication",
   },
   {
     id: 5,
     title: "한국경영인증원",
     image: ikmrImg,
-    link: "#",
+    link: "https://www.ikmr.co.kr/",
     project_desc: [],
     date: "2024-05-01",
     slide_image: ikmrMainImg,
     description: "기관 홈페이지 리뉴얼.",
     technology: ["HTML5", "CSS3", "JavaScript"],
+    category: "Soro Communication",
   },
   {
     id: 6,
@@ -107,40 +123,44 @@ const portfolioData = [
     date: "2024-04-15",
     description: "이커머스 플랫폼 퍼블리싱.",
     technology: ["HTML5", "CSS3", "JavaScript"],
+    category: "Soro Communication",
   },
   {
     id: 7,
     title: "피플리",
     image: peoplyImg,
-    link: "#",
+    link: "https://www.doosandigitalinnovation.com/kr/service/peoply",
     project_desc: [],
     date: "2024-03-20",
     description: "소셜 플랫폼 UI 개발.",
     technology: ["HTML5", "CSS3", "React"],
+    category: "Soro Communication",
   },
   {
     id: 8,
     title: "네이쳐스영",
     image: natureImg,
-    link: "#",
+    link: "https://naturesyoungb2b.com/page/brand.html",
     project_desc: [],
     date: "2024-02-10",
     description: "화장품 브랜드 사이트 제작.",
     technology: ["HTML5", "CSS3", "JavaScript"],
+    category: "Soro Communication",
   },
   {
     id: 9,
     title: "TSI",
     image: tsiImg,
-    link: "#",
+    link: "https://taesungind.co.kr/",
     project_desc: [],
     date: "2024-01-05",
     description: "기업 홈페이지 제작.",
     technology: ["HTML5", "CSS3", "JavaScript"],
+    category: "Soro Communication",
   },
 ];
 
-const categories = ["All", "Web", "Mobile", "Design"];
+const categories = ["All", "TokenPost", "Soro Communication"];
 
 const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -231,13 +251,14 @@ const Portfolio = () => {
               return (
                 <li
                   key={item.id}
-                  className={`item ${isFadingOut ? "fade-out" : "fade-in"}`}
+                  className={`portfolio_item ${
+                    isFadingOut ? "fade-out" : "fade-in"
+                  }`}
                   onClick={() => openModal(index)}
                 >
                   <div className="portfolio_imgbox">
                     <img src={item.image} alt={item.title} />
                   </div>
-                  <div className="detail"></div>
                 </li>
               );
             })}
@@ -249,7 +270,7 @@ const Portfolio = () => {
         <div className={`portfolio_modal ${isModalVisible ? "show" : ""}`}>
           <div className="modal_content">
             <div className="close_btn" onClick={handleClose}>
-              <i class="ri-close-line"></i>
+              <i className="ri-close-line"></i>
             </div>
 
             <div className="modal_body">
@@ -266,8 +287,19 @@ const Portfolio = () => {
               </div>
               <div className="image_area">
                 <div className="monitor">
-                  <div className="slide">
-                    <img src={currentPortfolio.slide_image} alt="" />
+                  <div
+                    className={`slide ${
+                      currentPortfolio.slide_image ? "" : "not_found_img"
+                    }`}
+                  >
+                    <img
+                      src={
+                        currentPortfolio.slide_image
+                          ? currentPortfolio.slide_image
+                          : notFoundImg
+                      }
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>
@@ -326,6 +358,16 @@ const Portfolio = () => {
                       <li key={index}>{tech}</li>
                     ))}
                   </ul>
+                </div>
+                <div className="info_block">
+                  <div className="block_title">
+                    <h3>비고</h3>
+                  </div>
+                  {currentPortfolio.remarks ? (
+                    <p className="info_value">{currentPortfolio.remarks}</p>
+                  ) : (
+                    <p className="info_value">-</p>
+                  )}
                 </div>
                 {currentPortfolio.link && (
                   <div className="site_btn">

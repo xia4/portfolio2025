@@ -35,12 +35,11 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 3px;
 
-    li {
+    .portfolio_item {
       position: relative;
       list-style: none;
-      opacity: 1;
       transform: scale(1);
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      overflow: hidden;
 
       &.fade-in {
         opacity: 1;
@@ -52,45 +51,14 @@
         transform: scale(0.9);
       }
 
-      a {
-        position: relative;
+      img {
         display: block;
-        overflow: hidden;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out 0.1s;
+      }
 
+      &:hover {
         img {
-          display: block;
-          transition: all 0.3s ease-in-out 0.1s;
-        }
-
-        .detail {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          padding: 10px 20px;
-          background-color: rgba(238, 238, 238, 0);
-          opacity: 0;
-          transform: translateY(-10px);
-          pointer-events: none;
-          transition: all 0.3s ease-in-out;
-
-          .title {
-            font-size: 16px;
-            font-weight: bold;
-          }
-        }
-        &:hover {
-          img {
-            transform: scale(1.15);
-          }
-          .detail {
-            background-color: rgba(238, 238, 238, 0.7);
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-          }
+          transform: scale(1.10);
         }
       }
     }
@@ -223,14 +191,18 @@
           &::-webkit-scrollbar-track {
             background-color: #fff;
           }
+
+          &.not_found_img {
+            overflow-y: hidden;
+          }
           img {
             width: 100%;
             height: auto;
             filter: saturate(90%) contrast(80%);
-            transition: all 0.4s cubic-bezier(.23, 1, .32, 1);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 
             &:hover {
-              transition: all 0.8s cubic-bezier(.23, 1, .32, 1);
+              transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
               filter: saturate(110%) contrast(100%);
             }
           }

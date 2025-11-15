@@ -25,26 +25,26 @@ const About = () => {
                     <p className='intro_text'>또한, React.js, Vue3 등 JavaScript 프레임워크를 활용한 프로젝트 경험을 통해 프론트엔드 개발자로의 성장을 목표로 하고 있습니다.</p>
                 </div>
                 <div className="row_item">
-                    <dl class="info_list">
-                        <div class="row">
-                            <dt class="label_box"><span className="label">이름</span></dt>
-                            <dd class="info_value">이현준</dd>
+                    <dl className="info_list">
+                        <div className="row">
+                            <dt className="label_box"><span className="label">이름</span></dt>
+                            <dd className="info_value">이현준</dd>
                         </div>
-                        <div class="row">
-                            <dt class="label_box"><span className="label">나이</span></dt>
-                            <dd class="info_value">29</dd>
+                        <div className="row">
+                            <dt className="label_box"><span className="label">나이</span></dt>
+                            <dd className="info_value">29</dd>
                         </div>
-                        <div class="row">
-                            <dt class="label_box"><span className="label">주소</span></dt>
-                            <dd class="info_value">서울 영등포구 당산동3가</dd>
+                        <div className="row">
+                            <dt className="label_box"><span className="label">주소</span></dt>
+                            <dd className="info_value">서울 영등포구 당산동3가</dd>
                         </div>
-                        <div class="row">
-                            <dt class="label_box"><span className="label">이메일</span></dt>
-                            <dd class="info_value info_email"><a href="mailto:guswns1411@naver.com">guswns1411@naver.com</a></dd>
+                        <div className="row">
+                            <dt className="label_box"><span className="label">이메일</span></dt>
+                            <dd className="info_value info_email"><a href="mailto:guswns1411@naver.com">guswns1411@naver.com</a></dd>
                         </div>
-                        <div class="row">
-                            <dt class="label_box"><span className="label">연락처</span></dt>
-                            <dd class="info_value">(+82)10 8286 2797</dd>
+                        <div className="row">
+                            <dt className="label_box"><span className="label">연락처</span></dt>
+                            <dd className="info_value">(+82)10 8286 2797</dd>
                         </div>
                     </dl>
                     <div className="availability_box">
