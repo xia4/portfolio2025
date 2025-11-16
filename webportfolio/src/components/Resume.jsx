@@ -147,8 +147,8 @@ const Resume = ({ activeSection }) => {
                         <ul className="skills_list">
                             {skills.map((skill, i) => (
                                 <li key={skill.name} className="skill_item">
-                                    <div className="skill_label">
-                                        {skill.name}
+                                    <div className="skill_label_wrap">
+                                        <p className='skill_label'>{skill.name}</p>
                                         <span className="skill_level">{animatedLevels[i]}%</span>
                                     </div>
                                     <div className="skill_bar_bg">

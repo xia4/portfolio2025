@@ -9,6 +9,8 @@ const Header = ({ setActiveSection, activeSection }) => {
   };
 
   const handleMenuClick = (menuId) => {
+
+    window.dispatchEvent(new Event('closePortfolioModal'));
     if (activeSection !== menuId) {
       setActiveSection(menuId);
       

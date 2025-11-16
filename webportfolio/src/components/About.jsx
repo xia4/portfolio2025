@@ -35,6 +35,10 @@ const About = () => {
                             <dd className="info_value">29</dd>
                         </div>
                         <div className="row">
+                            <dt className="label_box"><span className="label">MBTI</span></dt>
+                            <dd className="info_value">ISFP</dd>
+                        </div>
+                        <div className="row">
                             <dt className="label_box"><span className="label">주소</span></dt>
                             <dd className="info_value">서울 영등포구 당산동3가</dd>
                         </div>
