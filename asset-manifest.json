@@ -1,17 +1,26 @@
 {
   "files": {
-    "main.css": "/portfolio2025/static/css/main.dfc41e53.css",
-    "main.js": "/portfolio2025/static/js/main.dcadec33.js",
+    "main.css": "/portfolio2025/static/css/main.b968e322.css",
+    "main.js": "/portfolio2025/static/js/main.22bdc7a6.js",
     "static/js/453.0630e2a9.chunk.js": "/portfolio2025/static/js/453.0630e2a9.chunk.js",
+    "static/media/tedo_slide.png": "/portfolio2025/static/media/tedo_slide.02c36e0abce6d81d19b5.png",
+    "static/media/ikmr_main.png": "/portfolio2025/static/media/ikmr_main.0f12e057a438a1f2f92e.png",
+    "static/media/tokenpost_main.png": "/portfolio2025/static/media/tokenpost_main.a8daf5f133b0aeb9854d.png",
     "static/media/proflie_img.png": "/portfolio2025/static/media/proflie_img.2b3c4cdbe36ab8fdc178.png",
+    "static/media/notebook.png": "/portfolio2025/static/media/notebook.c30452fd04f921cf196b.png",
     "static/media/bg.png": "/portfolio2025/static/media/bg.fffb436cb2a1d41f01c9.png",
+    "static/media/not_found.png": "/portfolio2025/static/media/not_found.773f51bb21ce5444231a.png",
+    "static/media/naver.png": "/portfolio2025/static/media/naver.7711fe912af5eccd7299.png",
+    "static/media/ikmr.png": "/portfolio2025/static/media/ikmr.e17b86d03c96fd2dc8c7.png",
+    "static/media/rezn.png": "/portfolio2025/static/media/rezn.3e19a07e6cfec8b73ba6.png",
+    "static/media/kicc.png": "/portfolio2025/static/media/kicc.4b1e4b96ae07cf5d029c.png",
     "index.html": "/portfolio2025/index.html",
-    "main.dfc41e53.css.map": "/portfolio2025/static/css/main.dfc41e53.css.map",
-    "main.dcadec33.js.map": "/portfolio2025/static/js/main.dcadec33.js.map",
+    "main.b968e322.css.map": "/portfolio2025/static/css/main.b968e322.css.map",
+    "main.22bdc7a6.js.map": "/portfolio2025/static/js/main.22bdc7a6.js.map",
     "453.0630e2a9.chunk.js.map": "/portfolio2025/static/js/453.0630e2a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dfc41e53.css",
-    "static/js/main.dcadec33.js"
+    "static/css/main.b968e322.css",
+    "static/js/main.22bdc7a6.js"
   ]
 }
