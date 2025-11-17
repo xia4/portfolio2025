@@ -10,7 +10,7 @@
     margin: 0 auto;
     height: 100%;
     z-index: 10;
-    
+
     .contact_wrap {
       display: flex;
       flex-direction: column;
@@ -75,7 +75,7 @@
     z-index: 1;
     pointer-events: none;
   }
-  
+
   .circle {
     position: absolute;
     border-radius: 50%;
@@ -83,9 +83,8 @@
     opacity: 0.7;
     animation: bounce 5s ease-in-out infinite alternate;
   }
-  
- /* 원1 — 퍼플 그라데이션 */
-.circle_1 {
+
+  .circle_1 {
     width: 200px;
     height: 200px;
     left: 10%;
@@ -93,8 +92,7 @@
     background: radial-gradient(circle, #b889ff 0%, #6b48ff 100%);
     animation-duration: 5s;
   }
-  
-  /* 원2 — 핑크 + 바이올렛 */
+
   .circle_2 {
     width: 150px;
     height: 150px;
@@ -103,8 +101,7 @@
     background: radial-gradient(circle, #ff9acb 0%, #ff63b6 100%);
     animation-duration: 4.2s;
   }
-  
-  /* 원3 — 블루 + 퍼플 */
+
   .circle_3 {
     width: 230px;
     height: 230px;
@@ -113,8 +110,7 @@
     background: radial-gradient(circle, #86a6ff 0%, #5b6cff 100%);
     animation-duration: 6s;
   }
-  
-  /* 원4 — 민트 + 블루 */
+
   .circle_4 {
     width: 120px;
     height: 120px;
@@ -123,8 +119,7 @@
     background: radial-gradient(circle, #86ffd9 0%, #3ad1b3 100%);
     animation-duration: 4s;
   }
-  
-  /* 원5 — 옐로우 + 오렌지 */
+
   .circle_5 {
     width: 180px;
     height: 180px;
@@ -133,7 +128,7 @@
     background: radial-gradient(circle, #ffe497 0%, #ffc36f 100%);
     animation-duration: 5.5s;
   }
-  
+
   @keyframes bounce {
     0% {
       transform: translateY(0) scale(1);

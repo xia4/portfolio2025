@@ -11,7 +11,7 @@ const About = () => {
                     <p className="section_description">Web Publisher</p>
                 </div>
             </div>
-            <div className="row middle_position">
+            <div className="row about_wrap">
                 <div className="row_item">
                     <div className="my_photo_block">
                         <img src={require('../assets/proflie_img.png')} alt="profile" />

@@ -170,120 +170,119 @@ const Portfolio = () => {
                   </button>
                 </div>
               </div>
-              <div className="image_area">
-                <div className="monitor">
-                  {currentPortfolio.id === 11 ? (
-                    <div className="monitor_screen">
-                      <iframe
-                        src={currentPortfolio.link}
-                        className="slide iframe_preview "
-                        title="tsi_frame"
-                      ></iframe>
-                    </div>
-                  ) : (
-                    <div
-                      className={`slide ${
-                        currentPortfolio.slide_image ? "" : "not_found_img"
-                      }`}
-                      ref={monitorRef}
-                    >
-                      <img
-                        src={
-                          currentPortfolio.slide_image
-                            ? currentPortfolio.slide_image
-                            : notFoundImg
-                        }
-                        alt=""
-                      />
-
-                      {currentPortfolio.slide_image && (
-                        <div className="scroll_mouse">
-                          <span className="mouse">
-                            <span></span>
-                          </span>
-                          <p>scroll me</p>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              <div className="info_area">
-                <div className="info_block">
-                  <div className="block_title">
-                    <h3>프로젝트 개요</h3>
-                  </div>
-                  <ul>
-                    {currentPortfolio.project_desc.map((item, idx) => (
-                      <li key={idx} className="info_value">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="info_block">
-                  <div className="block_title">
-                    <h3>주요 역할 및 업무</h3>
-                  </div>
-                  {currentPortfolio.description && (
-                    <p className="info_value">{currentPortfolio.description}</p>
-                  )}
-
-                  {currentPortfolio.desc_list &&
-                    currentPortfolio.desc_list.length > 0 && (
-                      <ul>
-                        {currentPortfolio.desc_list.map((item, idx) => (
-                          <li key={idx} className="info_value">
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
+              <div className="image_container">
+                <div className="image_wrap">
+                  <div className="monitor">
+                    {currentPortfolio.id === 11 ? (
+                      <div className="monitor_screen">
+                        <iframe
+                          src={currentPortfolio.link}
+                          className="slide iframe_preview "
+                          title="tsi_frame"
+                        ></iframe>
+                      </div>
+                    ) : (
+                      <div
+                        className={`slide ${
+                          currentPortfolio.slide_image ? "" : "not_found_img"
+                        }`}
+                        ref={monitorRef}
+                      >
+                        <img
+                          src={
+                            currentPortfolio.slide_image
+                              ? currentPortfolio.slide_image
+                              : notFoundImg
+                          }
+                          alt=""
+                        />
+                        {currentPortfolio.slide_image && (
+                          <div className="scroll_mouse">
+                            <span className="mouse">
+                              <span></span>
+                            </span>
+                            <p>scroll me</p>
+                          </div>
+                        )}
+                      </div>
                     )}
-                </div>
-                <div className="info_block">
-                  <div className="block_title">
-                    <h3>제작 기간</h3>
                   </div>
-                  <p className="info_value">📅 {currentPortfolio.date}</p>
                 </div>
-                <div className="info_block">
-                  <div className="block_title">
-                    <h3>기여도</h3>
-                  </div>
-                  <p className="info_value">
-                    퍼블리싱 {currentPortfolio.level}
-                  </p>
-                </div>
-                <div className="info_block">
-                  <div className="block_title">
-                    <h3>기술스택</h3>
-                  </div>
-                  <ul className="skill_list">
-                    {currentPortfolio.technology.map((tech, index) => (
-                      <li key={index}>{tech}</li>
-                    ))}
-                  </ul>
-                </div>
-                {currentPortfolio.remarks && (
+                <div className="info_area">
                   <div className="info_block">
                     <div className="block_title">
-                      <h3>비고</h3>
+                      <h3>프로젝트 개요</h3>
                     </div>
-                    <p className="info_value">{currentPortfolio.remarks}</p>
+                    <ul>
+                      {currentPortfolio.project_desc.map((item, idx) => (
+                        <li key={idx} className="info_value">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                )}
-                {currentPortfolio.link && (
-                  <div className="site_btn">
-                    <a
-                      href={currentPortfolio.link}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Go Site
-                    </a>
+                  <div className="info_block">
+                    <div className="block_title">
+                      <h3>주요 역할 및 업무</h3>
+                    </div>
+                    {currentPortfolio.description && (
+                      <p className="info_value">{currentPortfolio.description}</p>
+                    )}
+                    {currentPortfolio.desc_list &&
+                      currentPortfolio.desc_list.length > 0 && (
+                        <ul>
+                          {currentPortfolio.desc_list.map((item, idx) => (
+                            <li key={idx} className="info_value">
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                   </div>
-                )}
+                  <div className="info_block">
+                    <div className="block_title">
+                      <h3>제작 기간</h3>
+                    </div>
+                    <p className="info_value">📅 {currentPortfolio.date}</p>
+                  </div>
+                  <div className="info_block">
+                    <div className="block_title">
+                      <h3>기여도</h3>
+                    </div>
+                    <p className="info_value">
+                      퍼블리싱 {currentPortfolio.level}
+                    </p>
+                  </div>
+                  <div className="info_block">
+                    <div className="block_title">
+                      <h3>기술스택</h3>
+                    </div>
+                    <ul className="skill_list">
+                      {currentPortfolio.technology.map((tech, index) => (
+                        <li key={index}>{tech}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  {currentPortfolio.remarks && (
+                    <div className="info_block">
+                      <div className="block_title">
+                        <h3>비고</h3>
+                      </div>
+                      <p className="info_value">{currentPortfolio.remarks}</p>
+                    </div>
+                  )}
+                  {currentPortfolio.link && (
+                    <div className="site_btn">
+                      <a
+                        href={currentPortfolio.link}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Go Site
+                      </a>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>

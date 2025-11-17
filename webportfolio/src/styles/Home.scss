@@ -16,4 +16,10 @@
     &::after, &::before {
       display: none;
     }
+}
+
+@media (max-width: 1024px) {
+  #home .section_inner .home_page_block > h2 {
+    font-size: 50px;
   }
+}

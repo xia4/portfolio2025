@@ -144,6 +144,8 @@
 }
 
 .section_inner {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   padding: 20px 30px 50px;
   overflow-y: auto;
@@ -311,5 +313,15 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .site_main {
+    margin-left: 0;
+  }
+
+  .pt-wrapper {
+    padding: 70px 5%;
   }
 }

@@ -1,3 +1,8 @@
+.about_wrap {
+    height: 100%;
+    align-items: center;
+}
+
 .my_photo_block {
     border-radius: 15px;
     overflow: hidden;
@@ -93,5 +98,59 @@
     to {
         opacity: 0;
         transform: scale(2.5);
+    }
+}
+
+@media (max-width: 1450px) {
+    .about_wrap {
+        width: 80%;
+        height: auto;
+        flex-wrap: wrap;
+        margin: 0 auto;
+
+        .row_item {
+            &:nth-child(1),
+            &:nth-child(2) {
+                width: 50%;
+                flex: none;
+            }
+            &:nth-child(3) {
+                width: 100%;
+
+                .info_list {
+                    display: grid;
+                    grid-template-columns: repeat(3, 2fr);
+                    margin-top: 40px;
+                    gap: 20px;
+
+                    .row:not(:first-child) {
+                        margin-top: 0;
+                    }
+
+                    .label_box {
+                        min-width: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1024px) {
+    .intro_title {
+        font-size: 18px;
+    }
+    .about_wrap {
+        width: 100%;
+
+        .label,
+        .info_value {
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .about_wrap .row_item:nth-child(3) .info_list {
+        grid-template-columns: repeat(2, 2fr);
     }
 }
