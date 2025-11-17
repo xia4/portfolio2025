@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio2025/static/css/main.92485ba8.css",
-    "main.js": "/portfolio2025/static/js/main.e1be6d0f.js",
+    "main.css": "/portfolio2025/static/css/main.925f34e6.css",
+    "main.js": "/portfolio2025/static/js/main.bad2b6a3.js",
     "static/js/453.0630e2a9.chunk.js": "/portfolio2025/static/js/453.0630e2a9.chunk.js",
     "static/media/bymood_main.png": "/portfolio2025/static/media/bymood_main.8cff0e01b05ae26637e0.png",
     "static/media/tebah_main.png": "/portfolio2025/static/media/tebah_main.d75dc426b1ba0ce32038.png",
@@ -27,12 +27,12 @@
     "static/media/bymood.png": "/portfolio2025/static/media/bymood.04c7d67bea8f8cdcc21f.png",
     "static/media/tebah.png": "/portfolio2025/static/media/tebah.442ffd667ed3957bf844.png",
     "index.html": "/portfolio2025/index.html",
-    "main.92485ba8.css.map": "/portfolio2025/static/css/main.92485ba8.css.map",
-    "main.e1be6d0f.js.map": "/portfolio2025/static/js/main.e1be6d0f.js.map",
+    "main.925f34e6.css.map": "/portfolio2025/static/css/main.925f34e6.css.map",
+    "main.bad2b6a3.js.map": "/portfolio2025/static/js/main.bad2b6a3.js.map",
     "453.0630e2a9.chunk.js.map": "/portfolio2025/static/js/453.0630e2a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.92485ba8.css",
-    "static/js/main.e1be6d0f.js"
+    "static/css/main.925f34e6.css",
+    "static/js/main.bad2b6a3.js"
   ]
 }
