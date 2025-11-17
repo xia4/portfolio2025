@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio2025/static/css/main.20e84f0a.css",
-    "main.js": "/portfolio2025/static/js/main.f2a83866.js",
+    "main.js": "/portfolio2025/static/js/main.3aac2dfb.js",
     "static/js/453.0630e2a9.chunk.js": "/portfolio2025/static/js/453.0630e2a9.chunk.js",
     "static/media/bymood_main.png": "/portfolio2025/static/media/bymood_main.8cff0e01b05ae26637e0.png",
     "static/media/tebah_main.png": "/portfolio2025/static/media/tebah_main.d75dc426b1ba0ce32038.png",
@@ -17,23 +17,21 @@
     "static/media/notebook.png": "/portfolio2025/static/media/notebook.c30452fd04f921cf196b.png",
     "static/media/referral_image.png": "/portfolio2025/static/media/referral_image.68506faff11b95531288.png",
     "static/media/bg.png": "/portfolio2025/static/media/bg.fffb436cb2a1d41f01c9.png",
-    "static/media/naver.png": "/portfolio2025/static/media/naver.84bae19b9946076444c2.png",
     "static/media/not_found.png": "/portfolio2025/static/media/not_found.773f51bb21ce5444231a.png",
     "static/media/subscribe_image.png": "/portfolio2025/static/media/subscribe_image.6572df162240c2cb9515.png",
-    "static/media/ikmr.png": "/portfolio2025/static/media/ikmr.4249114c4d8b1347643a.png",
-    "static/media/rezn.png": "/portfolio2025/static/media/rezn.98a7b490820bdfbc5a87.png",
     "static/media/tebahmall.png": "/portfolio2025/static/media/tebahmall.ab586113fbf2e0784b53.png",
-    "static/media/kicc.png": "/portfolio2025/static/media/kicc.e39bf8f55ebca1b62688.png",
+    "static/media/naver.png": "/portfolio2025/static/media/naver.196c34ba396afe854870.png",
     "static/media/bymood.png": "/portfolio2025/static/media/bymood.04c7d67bea8f8cdcc21f.png",
+    "static/media/ikmr.png": "/portfolio2025/static/media/ikmr.b6f9e304c7e7e8b55acd.png",
+    "static/media/rezn.png": "/portfolio2025/static/media/rezn.87f04e2e83b5dbec06b3.png",
     "static/media/tebah.png": "/portfolio2025/static/media/tebah.442ffd667ed3957bf844.png",
-    "static/media/tedo.png": "/portfolio2025/static/media/tedo.de912b33521f3f2cfcc2.png",
     "index.html": "/portfolio2025/index.html",
     "main.20e84f0a.css.map": "/portfolio2025/static/css/main.20e84f0a.css.map",
-    "main.f2a83866.js.map": "/portfolio2025/static/js/main.f2a83866.js.map",
+    "main.3aac2dfb.js.map": "/portfolio2025/static/js/main.3aac2dfb.js.map",
     "453.0630e2a9.chunk.js.map": "/portfolio2025/static/js/453.0630e2a9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.20e84f0a.css",
-    "static/js/main.f2a83866.js"
+    "static/js/main.3aac2dfb.js"
   ]
 }
