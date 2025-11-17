@@ -49,11 +49,12 @@ export const portfolio_mock_data = [
     ],
     technology: ["HTML5", "CSS3", "JavaScript", "jQuery", "Git", "Figma"],
     category: "TokenPost",
+    site_desc: "블록체인·가상자산 관련 뉴스와 분석 콘텐츠를 제공하는 온라인 미디어 플랫폼입니다."
   },
   {
     id: 2,
     title: "TokenPost – 친구초대 이벤트 랜딩페이지",
-    image: referralImg,
+    image: tokenpostImg,
     link: "https://www.tokenpost.kr/subscribe/landing/referral-event",
     project_desc: [
       "TokenPost PRO 친구초대 이벤트 전용 랜딩페이지를 퍼블리싱하여, 초대·참여 과정이 명확하게 전달되도록 UI 흐름을 설계했습니다.",
@@ -72,11 +73,12 @@ export const portfolio_mock_data = [
     ],
     technology: ["HTML5", "CSS3", "JavaScript", "jQuery", "Git", "Figma"],
     category: "TokenPost",
+    site_desc: "TokenPost PRO 친구초대 이벤트 참여 방법과 혜택을 안내하는 전용 프로모션 랜딩 페이지입니다."
   },
   {
     id: 3,
     title: "TokenPost PRO – 2025 구독 오픈 이벤트",
-    image: subscirbeImg,
+    image: tokenpostImg,
     link: "https://www.tokenpost.kr/subscribe/landing/2025-subscription-open",
     project_desc: [
       "2025년 구독 정책 개편에 맞춰 사용자에게 핵심 혜택과 변경 사항을 직관적으로 전달하는 구독 오픈 이벤트 페이지를 퍼블리싱했습니다.",
@@ -93,6 +95,7 @@ export const portfolio_mock_data = [
     ],
     technology: ["HTML5", "CSS3", "JavaScript", "jQuery", "Git", "Figma"],
     category: "TokenPost",
+    site_desc: "새로운 구독 플랜과 주요 혜택을 한눈에 보여주고 가입을 유도하는 구독 오픈 이벤트 페이지입니다."
   },
   {
     id: 4,
@@ -115,8 +118,8 @@ export const portfolio_mock_data = [
     ],
     technology: ["HTML5", "SCSS", "JavaScript", "Git", "Figma"],
     category: "Soro Communication",
-    remarks:
-      "네이버 클라우드 플랫폼 내부 보안 정책으로 인해 실제 페이지 및 산출물 제공은 제한됩니다.",
+    remarks: "네이버 클라우드 플랫폼 내부 보안 정책으로 인해 실제 페이지 및 산출물 제공은 제한됩니다.",
+    site_desc: "네이버 클라우드의 다양한 클라우드 상품과 콘솔로 진입하는 기업용 클라우드 서비스 플랫폼입니다."
   },
   {
     id: 5,
@@ -139,8 +142,8 @@ export const portfolio_mock_data = [
     ],
     technology: ["Vue3", "SCSS", "Git", "PSD"],
     category: "Soro Communication",
-    remarks:
-      "KICC 웹사이트 리뉴얼 전체적으로 퍼블리싱 작업을 완료했으나, 회사 내부 사정으로 인해 배포 단계에서 프로젝트가 중단되었습니다. \n이로 인해 실제 서비스 링크와 화면 캡처는 제공이 어려운 점 참고 부탁드립니다.",
+    remarks: "KICC 웹사이트 리뉴얼 전체적으로 퍼블리싱 작업을 완료했으나, 회사 내부 사정으로 인해 배포 단계에서 프로젝트가 중단되었습니다. \n이로 인해 실제 서비스 링크와 화면 캡처는 제공이 어려운 점 참고 부탁드립니다.",
+    site_desc: "결제 인프라와 금융 솔루션을 소개하고 고객사 지원 정보를 제공하는 결제 전문 기업 홈페이지입니다."
   },
   {
     id: 6,
@@ -165,6 +168,7 @@ export const portfolio_mock_data = [
     ],
     technology: ["HTML5", "CSS3", "JavaScript", "PHP", "Figma"],
     category: "Soro Communication",
+    site_desc: "브랜드 아이덴티티와 서비스를 스토리텔링 형태로 보여주는 반응형 프로모션 웹사이트입니다."
   },
   {
     id: 7,
@@ -186,6 +190,7 @@ export const portfolio_mock_data = [
     ],
     technology: ["HTML5", "CSS3", "JavaScript", "PHP", "PSD"],
     category: "Soro Communication",
+    site_desc: "각종 인증·심사 서비스를 안내하고 신청·문의가 가능한 공인 인증 기관 홈페이지입니다."
   },
   {
     id: 8,
@@ -206,8 +211,8 @@ export const portfolio_mock_data = [
     ],
     technology: ["Svelte.js", "SCSS", "Git"],
     category: "Soro Communication",
-    remarks:
-      "리즌마켓 웹사이트의 퍼블리싱 및 유지보수 작업을 수행했으나, 현재는 '두타온' 사이트로 변경되어 기존 산출물 제공이 제한됩니다.",
+    remarks: "리즌마켓 웹사이트의 퍼블리싱 및 유지보수 작업을 수행했으나, 현재는 '두타온' 사이트로 변경되어 기존 산출물 제공이 제한됩니다.",
+    site_desc: "친환경 제품을 판매하는 온라인 쇼핑몰 형태의 이커머스 플랫폼입니다."
   },
   {
     id: 9,
@@ -228,6 +233,7 @@ export const portfolio_mock_data = [
     ],
     technology: ["HTML5", "CSS3", "PHP", "PSD"],
     category: "Soro Communication",
+    site_desc: "기업 HR 전반을 통합 관리하는 올인원 HR 플랫폼 ‘피플리’의 서비스 소개 및 안내 페이지입니다."
   },
   {
     id: 10,
@@ -248,6 +254,7 @@ export const portfolio_mock_data = [
     ],
     technology: ["HTML5", "CSS3", "JavaScript", "PHP", "Figma"],
     category: "Soro Communication",
+    site_desc: "브랜드와 주요 제품을 소개하고 B2B 고객을 위한 정보를 제공하는 기업용 웹사이트입니다."
   },
   {
     id: 11,
@@ -267,6 +274,7 @@ export const portfolio_mock_data = [
     ],
     technology: ["HTML5", "CSS3", "JavaScript", "PHP", "Figma"],
     category: "Soro Communication",
+    site_desc: "회사 정보와 주요 사업·제품을 소개하고 문의를 받을 수 있는 제조·산업 기업 홈페이지입니다."
   },
   {
     id: 12,
@@ -289,6 +297,7 @@ export const portfolio_mock_data = [
     ],
     technology: ["HTML5", "CSS3", "JavaScript", "Figma"],
     category: "Freelance",
+    site_desc: "브랜드 스토리와 제품 정보를 소개하고 고객과 소통하는 카페24 기반 기업 웹사이트입니다."
   },
   {
     id: 13,
@@ -311,6 +320,7 @@ export const portfolio_mock_data = [
     ],
     technology: ["HTML5", "CSS3", "JavaScript", "Figma"],
     category: "Freelance",
+    site_desc: "Tebah 브랜드 상품을 판매하는 카페24 기반 온라인 쇼핑몰입니다."
   },
   {
     id: 14,
@@ -333,5 +343,6 @@ export const portfolio_mock_data = [
     ],
     technology: ["HTML5", "CSS3", "JavaScript", "Figma"],
     category: "Freelance",
+    site_desc: "브랜드 콘셉트에 맞춘 상품을 판매하는 카페24 기반 패션·라이프스타일 쇼핑몰입니다."
   },
 ];

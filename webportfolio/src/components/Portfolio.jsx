@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { portfolio_mock_data } from "../data/portfolio_mock_data";
 import notFoundImg from "../assets/not_found.png";
 import "../styles/Portfolio.scss";
@@ -13,11 +13,14 @@ const Portfolio = () => {
     portfolioData.map((item) => item.id)
   );
   const [fadingOutItems, setFadingOutItems] = useState([]);
+  const [fadingInItems, setFadingInItems] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const monitorRef = useRef(null);
 
   const handleFilter = (category) => {
     setSelectedCategory(category);
+
     const newVisibleIds =
       category === "All"
         ? portfolioData.map((item) => item.id)
@@ -25,12 +28,20 @@ const Portfolio = () => {
             .filter((item) => item.category === category)
             .map((item) => item.id);
 
-    const toFadeOut = visibleItems.filter((id) => !newVisibleIds.includes(id));
-    setFadingOutItems(toFadeOut);
+    const itemsToFadeOut = visibleItems.filter(
+      (id) => !newVisibleIds.includes(id)
+    );
+    const itemsToFadeIn = newVisibleIds.filter(
+      (id) => !visibleItems.includes(id)
+    );
+
+    setFadingOutItems(itemsToFadeOut);
+    setFadingInItems(itemsToFadeIn);
 
     setTimeout(() => {
       setVisibleItems(newVisibleIds);
       setFadingOutItems([]);
+      setFadingInItems([]);
     }, 300);
   };
 
@@ -62,6 +73,13 @@ const Portfolio = () => {
       window.removeEventListener("closePortfolioModal", handleHeaderClickClose);
     };
   }, []);
+
+  useEffect(() => {
+    if (monitorRef.current) {
+      monitorRef.current.scrollTop = 0;
+      monitorRef.current.scrollLeft = 0;
+    }
+  }, [currentIndex, isModalVisible]);
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : portfolioData.length - 1));
@@ -105,14 +123,15 @@ const Portfolio = () => {
             {portfolioData.map((item, index) => {
               const isVisible = visibleItems.includes(item.id);
               const isFadingOut = fadingOutItems.includes(item.id);
+              const isFadingIn = fadingInItems.includes(item.id);
 
-              if (!isVisible && !isFadingOut) return null;
+              if (!isVisible && !isFadingOut && !isFadingIn) return null;
 
               return (
                 <li
                   key={item.id}
-                  className={`portfolio_item ${
-                    isFadingOut ? "fade-out" : "fade-in"
+                  className={`portfolio_item${isFadingOut ? " fade-out" : ""}${
+                    isFadingIn ? " fade-in" : ""
                   }`}
                   onClick={() => openModal(index)}
                 >
@@ -120,7 +139,10 @@ const Portfolio = () => {
                     <img src={item.image} alt={item.title} />
                   </div>
                   <div className="caption">
-                    <h1>{item.title}</h1>
+                    <h1 className="caption_title">{item.title}</h1>
+                    {item.site_desc && (
+                      <p className="caption_description">{item.site_desc}</p>
+                    )}
                   </div>
                 </li>
               );
@@ -154,7 +176,7 @@ const Portfolio = () => {
                     <div className="monitor_screen">
                       <iframe
                         src={currentPortfolio.link}
-                        className="slide"
+                        className="slide iframe_preview "
                         title="tsi_frame"
                       ></iframe>
                     </div>
@@ -163,6 +185,7 @@ const Portfolio = () => {
                       className={`slide ${
                         currentPortfolio.slide_image ? "" : "not_found_img"
                       }`}
+                      ref={monitorRef}
                     >
                       <img
                         src={
@@ -172,6 +195,15 @@ const Portfolio = () => {
                         }
                         alt=""
                       />
+
+                      {currentPortfolio.slide_image && (
+                        <div className="scroll_mouse">
+                          <span className="mouse">
+                            <span></span>
+                          </span>
+                          <p>scroll me</p>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>

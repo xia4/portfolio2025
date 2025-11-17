@@ -1,0 +1,145 @@
+.contact_section {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 143px);
+  overflow: hidden;
+
+  .contact_inner {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    height: 100%;
+    z-index: 10;
+    
+    .contact_wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      height: 100%;
+
+      .arrow {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-bottom: 20px;
+        border-right: 2px solid #707070;
+        border-bottom: 2px solid #707070;
+        transform: rotate(45deg);
+        animation: _upDownArrow 1s ease-in-out infinite;
+      }
+
+      @keyframes _upDownArrow {
+        0% {
+          transform: translateY(0) rotate(45deg);
+        }
+        50% {
+          transform: translateY(10px) rotate(45deg);
+        }
+        100% {
+          transform: translateY(0) rotate(45deg);
+        }
+      }
+
+      .mail_box {
+        a {
+          color: #ff724c;
+          font-size: 18px;
+          border-bottom: 1px dashed #ff724c;
+          font-style: italic;
+        }
+      }
+    }
+
+    .copy {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      margin: 0 auto;
+      padding-top: 20px;
+      border-top: 1px dashed #ff724c;
+
+      p {
+        font-size: 14px;
+        opacity: 0.8;
+        color: #222;
+        text-align: center;
+      }
+    }
+  }
+
+  .contact_bounce_bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(30px); // 블러 강조
+    opacity: 0.7;
+    animation: bounce 5s ease-in-out infinite alternate;
+  }
+  
+ /* 원1 — 퍼플 그라데이션 */
+.circle_1 {
+    width: 200px;
+    height: 200px;
+    left: 10%;
+    top: 20%;
+    background: radial-gradient(circle, #b889ff 0%, #6b48ff 100%);
+    animation-duration: 5s;
+  }
+  
+  /* 원2 — 핑크 + 바이올렛 */
+  .circle_2 {
+    width: 150px;
+    height: 150px;
+    right: 15%;
+    top: 35%;
+    background: radial-gradient(circle, #ff9acb 0%, #ff63b6 100%);
+    animation-duration: 4.2s;
+  }
+  
+  /* 원3 — 블루 + 퍼플 */
+  .circle_3 {
+    width: 230px;
+    height: 230px;
+    left: 25%;
+    bottom: 10%;
+    background: radial-gradient(circle, #86a6ff 0%, #5b6cff 100%);
+    animation-duration: 6s;
+  }
+  
+  /* 원4 — 민트 + 블루 */
+  .circle_4 {
+    width: 120px;
+    height: 120px;
+    right: 35%;
+    top: 10%;
+    background: radial-gradient(circle, #86ffd9 0%, #3ad1b3 100%);
+    animation-duration: 4s;
+  }
+  
+  /* 원5 — 옐로우 + 오렌지 */
+  .circle_5 {
+    width: 180px;
+    height: 180px;
+    right: 5%;
+    bottom: 15%;
+    background: radial-gradient(circle, #ffe497 0%, #ffc36f 100%);
+    animation-duration: 5.5s;
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(0) scale(1);
+    }
+    100% {
+      transform: translateY(-50px) scale(1.2);
+    }
+  }
+}
