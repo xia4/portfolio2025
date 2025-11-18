@@ -1,27 +1,36 @@
 // src/mock/portfolio_mock_data.js
 import tokenpostImg from "../assets/tokenpost.png";
 import tokenpostMainImg from "../assets/tokenpost_main.png";
+import tokenpostMobileMainImg from "../assets/tokenpost_main_m.png";
 import referralImg from "../assets/referral_image.png";
-import referraEvent from "../assets/referral_event.png";
+import referralEvent from "../assets/referral_event.png";
+import referralMobileEvent from "../assets/m/referral_event_m.png";
 import subscirbeImg from "../assets/subscribe_image.png";
 import subscribeLanding from "../assets/subscribe_landing.png";
+import subscribeMobileLanding from "../assets/m/subscribe_landing_m.png";
 import tedoImg from "../assets/tedo.png";
 import tedoSlideImg from "../assets/tedo_slide.png";
 import kiccImg from "../assets/kicc.png";
 import ikmrMainImg from "../assets/ikmr_main.png";
+import ikmrMobileMainImg from "../assets/m/ikmr_main_m.png";
 import naverImg from "../assets/naver.png";
 import ikmrImg from "../assets/ikmr.png";
 import reznImg from "../assets/rezn.png";
 import peoplyImg from "../assets/peoply.png";
 import peoplyMainImg from "../assets/peoply_main.png";
+import peoplyMobileMainImg from "../assets/m/peoply_main_m.png";
 import natureImg from "../assets/nature.png";
 import natureMainImg from "../assets/nature_main.png";
+import natureMobileMainImg from "../assets/m/nature_main_m.png";
 import tebahImg from "../assets/tebah.png";
 import tebahMainImg from "../assets/tebah_main.png";
+import tebahMobileMainImg from "../assets/m/tebah_main_m.png";
 import bymoodImg from "../assets/bymood.png";
 import bymoodMainImg from "../assets/bymood_main.png";
+import bymoodMobileMainImg from "../assets/m/bymood_main_m.png";
 import tebahMallImg from "../assets/tebahmall.png";
 import tebahMallMainImg from "../assets/tebahmall_main.png";
+import tebahMallMobileMainImg from "../assets/m/tebahmall_main_m.png";
 import tsiImg from "../assets/tsi.png";
 
 export const portfolio_mock_data = [
@@ -38,6 +47,7 @@ export const portfolio_mock_data = [
     level: "100%",
     description: "",
     slide_image: tokenpostMainImg,
+    m_slide_image: tokenpostMobileMainImg,
     desc_list: [
       "사이트 전반의 유지보수 및 신규 UI 적용을 위한 구조 개편",
       "헤더(PC/Mobile) 네비게이션 구조 수정 및 전면 개편 반영",
@@ -53,7 +63,7 @@ export const portfolio_mock_data = [
   },
   {
     id: 2,
-    title: "TokenPost – 친구초대 이벤트 랜딩페이지",
+    title: "TokenPost - 친구초대 이벤트 랜딩페이지",
     image: tokenpostImg,
     link: "https://www.tokenpost.kr/subscribe/landing/referral-event",
     project_desc: [
@@ -63,7 +73,8 @@ export const portfolio_mock_data = [
     date: "2025. 11",
     level: "100%",
     description: "",
-    slide_image: referraEvent,
+    slide_image: referralEvent,
+    m_slide_image: referralMobileEvent,
     desc_list: [
       "초대코드 공유 중심의 정보 구조 설계 및 UI 퍼블리싱",
       "GSAP 기반의 카드형 슬라이드 및 이벤트 과정 표현",
@@ -87,6 +98,7 @@ export const portfolio_mock_data = [
     level: "100%",
     description: "",
     slide_image: subscribeLanding,
+    m_slide_image: subscribeMobileLanding,
     desc_list: [
       "2025 구독 플랜 안내 구성 및 정보 전달 중심 레이아웃 설계",
       "적응형 및 다양한 해상도에서의 안정적인 UI 제공",
@@ -182,6 +194,7 @@ export const portfolio_mock_data = [
     date: "2024. 03 ~ 2025. 03",
     level: "100%",
     slide_image: ikmrMainImg,
+    m_slide_image: ikmrMobileMainImg,
     desc_list: [
       "PHP 기반 페이지 구조 분석 및 수정",
       "서브페이지 신규 제작 및 기존 페이지 개선",
@@ -225,6 +238,7 @@ export const portfolio_mock_data = [
     date: "2024. 04 ~ 2024. 05",
     level: "100%",
     slide_image: peoplyMainImg,
+    m_slide_image: peoplyMobileMainImg,
     desc_list: [
       "HTML, CSS, JavaScript를 활용한 퍼블리싱 작업",
       "플랫폼의 특성에 맞는 레이아웃 설계 및 스타일링",
@@ -246,6 +260,7 @@ export const portfolio_mock_data = [
     date: "2024. 03 ~ 2024. 05",
     level: "30%",
     slide_image: natureMainImg,
+    m_slide_image: natureMobileMainImg,
     desc_list: [
       "PHP 기반 페이지 구조 분석 및 수정",
       "서브페이지의 레이아웃 및 스타일링 유지보수",
@@ -288,6 +303,7 @@ export const portfolio_mock_data = [
     date: "2024. 09",
     level: "100%",
     slide_image: tebahMainImg,
+    m_slide_image: tebahMobileMainImg,
     desc_list: [
       "카페24 기반 웹사이트 신규 구축 및 메인·서브페이지 퍼블리싱",
       "레이아웃 설계, HTML/CSS 구조화, JavaScript 기능 구현",
@@ -311,6 +327,7 @@ export const portfolio_mock_data = [
     date: "2024. 09",
     level: "100%",
     slide_image: tebahMallMainImg,
+    m_slide_image: tebahMallMobileMainImg,
     desc_list: [
       "카페24 쇼핑몰 전반의 신규 퍼블리싱 작업 수행",
       "메인 페이지·상품 페이지·게시판 등 쇼핑몰 핵심 UI 퍼블리싱",
@@ -334,6 +351,7 @@ export const portfolio_mock_data = [
     date: "2024. 09",
     level: "100%",
     slide_image: bymoodMainImg,
+    m_slide_image: bymoodMobileMainImg,
     desc_list: [
       "카페24 기반 신규 웹사이트 구축 및 전체 퍼블리싱",
       "메인·서브 페이지 레이아웃 설계 및 스타일링",

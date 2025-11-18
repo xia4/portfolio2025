@@ -138,3 +138,35 @@
     }
   }
 }
+
+@media (max-width: 425px) {
+  .contact_section {
+    height: 100%;
+
+    .contact_bounce_bg {
+      display: none;
+    }
+
+    .contact_inner {
+      .contact_wrap {
+        text-align: center;
+        height: auto;
+        word-break: keep-all;
+
+        h2 {
+          font-size: 16px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  
+  .copy {
+    p {
+      font-size: 12px;
+      word-break: keep-all;
+    }
+  }
+}

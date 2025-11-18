@@ -154,3 +154,29 @@
         grid-template-columns: repeat(2, 2fr);
     }
 }
+@media (max-width: 425px) {
+    .about_wrap {
+        flex-direction: column;
+        gap: 30px;
+
+        .row_item {
+            &:nth-child(1),
+            &:nth-child(2) {
+                width: 100%;
+                text-align: center;
+            }
+            &:nth-child(3) {
+                .info_list {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 0;
+
+                    .row {
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+
+    }
+}

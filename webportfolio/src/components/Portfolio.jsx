@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { portfolio_mock_data } from "../data/portfolio_mock_data";
 import notFoundImg from "../assets/not_found.png";
+import notFoundImgMobile from "../assets/m/not_found_m.png";
 import "../styles/Portfolio.scss";
 
 const portfolioData = portfolio_mock_data;
@@ -81,6 +82,16 @@ const Portfolio = () => {
     }
   }, [currentIndex, isModalVisible]);
 
+  const currentPortfolio =
+    currentIndex !== null ? portfolioData[currentIndex] : null;
+
+  const hasImage =
+    currentPortfolio &&
+    (currentPortfolio.m_slide_image ||
+      currentPortfolio.slide_image ||
+      notFoundImg ||
+      notFoundImgMobile);
+
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : portfolioData.length - 1));
   };
@@ -88,9 +99,6 @@ const Portfolio = () => {
   const handleNext = () => {
     setCurrentIndex((prev) => (prev < portfolioData.length - 1 ? prev + 1 : 0));
   };
-
-  const currentPortfolio =
-    currentIndex !== null ? portfolioData[currentIndex] : null;
 
   return (
     <div className="section_inner">
@@ -177,26 +185,36 @@ const Portfolio = () => {
                       <div className="monitor_screen">
                         <iframe
                           src={currentPortfolio.link}
-                          className="slide iframe_preview "
+                          className="slide iframe_preview"
                           title="tsi_frame"
                         ></iframe>
                       </div>
                     ) : (
                       <div
-                        className={`slide ${
-                          currentPortfolio.slide_image ? "" : "not_found_img"
-                        }`}
+                        className={`slide ${hasImage ? "" : "not_found_img"}`}
                         ref={monitorRef}
                       >
-                        <img
-                          src={
-                            currentPortfolio.slide_image
-                              ? currentPortfolio.slide_image
-                              : notFoundImg
-                          }
-                          alt=""
-                        />
-                        {currentPortfolio.slide_image && (
+                        <picture>
+                          <source
+                            media="(max-width: 768px)"
+                            srcSet={
+                              currentPortfolio.m_slide_image ||
+                              currentPortfolio.slide_image ||
+                              notFoundImgMobile
+                            }
+                          />
+
+                          <img
+                            src={
+                              currentPortfolio.slide_image ||
+                              currentPortfolio.m_slide_image ||
+                              notFoundImg
+                            }
+                            alt=""
+                          />
+                        </picture>
+
+                        {hasImage && (
                           <div className="scroll_mouse">
                             <span className="mouse">
                               <span></span>
@@ -226,7 +244,9 @@ const Portfolio = () => {
                       <h3>주요 역할 및 업무</h3>
                     </div>
                     {currentPortfolio.description && (
-                      <p className="info_value">{currentPortfolio.description}</p>
+                      <p className="info_value">
+                        {currentPortfolio.description}
+                      </p>
                     )}
                     {currentPortfolio.desc_list &&
                       currentPortfolio.desc_list.length > 0 && (

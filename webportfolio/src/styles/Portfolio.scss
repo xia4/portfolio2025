@@ -478,37 +478,103 @@
     font-size: 24px;
   }
   .portfolio_modal .modal_content .modal_body .modal_title {
-    padding-top: 20px;
+    padding-top: 0;
   }
   .portfolio_modal {
     .modal_content {
-      padding: 20px;
+      padding: 60px 20px;
 
       .modal_body {
         flex-direction: column;
         row-gap: 25px;
 
-        .image_container .image_wrap {
-          width: 600px;
+        .image_container {
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: flex-start;
+          gap: 0;
 
-          .monitor {
-            height: 500px;
-            background-size: contain;
-          }
-
-          .slide {
-            top: 20px;
-            left: 11px;
-            width: 578px;
-            height: 350px;
-
-            .scroll_mouse {
-              width: 578px;
-              height: 350px;
+          .image_wrap {
+            flex: 0 0 235px;
+  
+            .monitor {
+              position: relative;
+              height: 500px;
+              background: url(../assets/m/phone.png) center center no-repeat;
+              background-size: contain;
+            }
+  
+            .slide {
+              top: 18px;
+              left: 6px;
+              width: 218px;
+              height: 465px;
+              border-radius: 20px;
+  
+              .scroll_mouse {
+                display: none;
+              }
+  
+              &::-webkit-scrollbar {
+                width: 0;
+              }
             }
           }
-        }
+
+          .info_area {
+            display: flex;
+            width: 350px;
+            padding: 10px 20px;
+          }
+        } 
       }
     }
   }
+}
+
+@media (max-width: 425px) {
+  .filter_section {
+    .portfolio_filter {
+      gap: 0;
+
+      li a {
+        padding: 5px 8px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .portfolio_grid ul {
+    grid-template-columns: 1fr 1fr;
+  }
+  .portfolio_modal .modal_content {
+    padding: 60px 10px;
+    .modal_body {
+      .modal_title h1 {
+        font-size: 18px;
+        word-break: keep-all;
+      }
+      .image_container {
+        flex-direction: column;
+    
+        .image_wrap {
+          width: 100%;
+
+          .monitor {
+            width: 235px;
+            margin: 0 auto;
+
+            .slide {
+              left: 5px;
+            }
+          }
+        }
+
+        .info_area {
+          width: 100%;
+          padding: 20px;
+        }
+      }
+    } 
+  } 
 }

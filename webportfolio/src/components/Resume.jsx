@@ -65,7 +65,7 @@ const Resume = ({ activeSection }) => {
           <p className="section_description">4 Years of Experience</p>
         </div>
       </div>
-      <div className="row">
+      <div className="row resume_wrap">
         {/* Education */}
         <div className="row_item">
           <div className="block_title">
