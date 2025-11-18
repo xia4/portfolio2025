@@ -85,12 +85,10 @@ const Portfolio = () => {
   const currentPortfolio =
     currentIndex !== null ? portfolioData[currentIndex] : null;
 
-  const hasImage =
+  const hasImage = !!(
     currentPortfolio &&
-    (currentPortfolio.m_slide_image ||
-      currentPortfolio.slide_image ||
-      notFoundImg ||
-      notFoundImgMobile);
+    (currentPortfolio.m_slide_image || currentPortfolio.slide_image)
+  );
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : portfolioData.length - 1));
@@ -161,13 +159,12 @@ const Portfolio = () => {
 
       <div className={`portfolio_modal ${isModalVisible ? "show" : ""}`}>
         {currentPortfolio && (
-          <div className="modal_content">
+          <div className="modal_content" ref={monitorRef}>
             <div className="close_btn" onClick={handleClose}>
               <i className="ri-close-line"></i>
             </div>
 
-            <div className="modal_body">
-              <div className="modal_title">
+            <div className="modal_title">
                 <div className="nav_btns">
                   <button onClick={handlePrev}>
                     <i className="ri-arrow-left-s-line"></i>
@@ -178,6 +175,7 @@ const Portfolio = () => {
                   </button>
                 </div>
               </div>
+            <div className="modal_body">
               <div className="image_container">
                 <div className="image_wrap">
                   <div className="monitor">
@@ -198,17 +196,19 @@ const Portfolio = () => {
                           <source
                             media="(max-width: 768px)"
                             srcSet={
-                              currentPortfolio.m_slide_image ||
-                              currentPortfolio.slide_image ||
-                              notFoundImgMobile
+                              hasImage
+                                ? currentPortfolio.m_slide_image ||
+                                  currentPortfolio.slide_image
+                                : notFoundImgMobile
                             }
                           />
 
                           <img
                             src={
-                              currentPortfolio.slide_image ||
-                              currentPortfolio.m_slide_image ||
-                              notFoundImg
+                              hasImage
+                                ? currentPortfolio.slide_image ||
+                                  currentPortfolio.m_slide_image
+                                : notFoundImg
                             }
                             alt=""
                           />
@@ -226,6 +226,7 @@ const Portfolio = () => {
                     )}
                   </div>
                 </div>
+
                 <div className="info_area">
                   <div className="info_block">
                     <div className="block_title">
